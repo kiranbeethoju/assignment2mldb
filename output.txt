@@ -1,0 +1,78 @@
+=== Question 1A: k-grams for all documents ===
+
+D1 2-char grams: 263
+D1 3-char grams: 765
+D1 2-word grams: 279
+
+D2 2-char grams: 262
+D2 3-char grams: 762
+D2 2-word grams: 278
+
+D3 2-char grams: 269
+D3 3-char grams: 828
+D3 2-word grams: 337
+
+D4 2-char grams: 255
+D4 3-char grams: 698
+D4 2-word grams: 232
+
+=== Question 1B: Jaccard similarity for all pairs ===
+
+
+2-char grams:
+  D1 vs D2: 0.9811
+  D1 vs D3: 0.8157
+  D1 vs D4: 0.6444
+  D2 vs D3: 0.8000
+  D2 vs D4: 0.6413
+  D3 vs D4: 0.6530
+
+3-char grams:
+  D1 vs D2: 0.9780
+  D1 vs D3: 0.5804
+  D1 vs D4: 0.3051
+  D2 vs D3: 0.5680
+  D2 vs D4: 0.3059
+  D3 vs D4: 0.3121
+
+2-word grams:
+  D1 vs D2: 0.9408
+  D1 vs D3: 0.1823
+  D1 vs D4: 0.0302
+  D2 vs D3: 0.1737
+  D2 vs D4: 0.0303
+  D3 vs D4: 0.0161
+Exact Jaccard similarity (D1 vs D2): 0.9780
+
+t =  20: Approx Jaccard = 1.0000, Error = 0.0220
+t =  60: Approx Jaccard = 0.9333, Error = 0.0446
+t = 150: Approx Jaccard = 0.9800, Error = 0.0020
+t = 300: Approx Jaccard = 0.9767, Error = 0.0013
+t = 600: Approx Jaccard = 0.9800, Error = 0.0020
+=== Question 3A: Finding best r and b ===
+
+r= 1, b=160: f(0.7)=1.0000, separation=0.0000
+r= 2, b=80: f(0.7)=1.0000, separation=0.0000
+r= 4, b=40: f(0.7)=1.0000, separation=0.0039
+r= 5, b=32: f(0.7)=0.9972, separation=0.0750
+r= 8, b=20: f(0.7)=0.6950, separation=0.6872
+r=10, b=16: f(0.7)=0.3677, separation=0.7451
+r=16, b=10: f(0.7)=0.0327, separation=0.2456
+r=20, b= 8: f(0.7)=0.0064, separation=0.0883
+r=32, b= 5: f(0.7)=0.0001, separation=0.0040
+r=40, b= 4: f(0.7)=0.0000, separation=0.0005
+
+Best choice: r = 10, b = 16
+
+=== Question 3B: LSH probability for all pairs ===
+
+Using r=10, b=16
+
+Candidate pairs from LSH: {('D1', 'D2')}
+
+D1 vs D2: Real sim = 0.9780, f(s) = 1.0000, Candidate = True
+D1 vs D3: Real sim = 0.5804, f(s) = 0.0671, Candidate = False
+D1 vs D4: Real sim = 0.3051, f(s) = 0.0001, Candidate = False
+D2 vs D3: Real sim = 0.5680, f(s) = 0.0545, Candidate = False
+D2 vs D4: Real sim = 0.3059, f(s) = 0.0001, Candidate = False
+D3 vs D4: Real sim = 0.3121, f(s) = 0.0001, Candidate = False
